@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bankruptcy Case Intake Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 28px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            font-size: 22px;
+        }
+        
+        h3 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="number"]:focus,
+        input[type="date"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        input[type="checkbox"],
+        input[type="radio"] {
+            width: auto;
+            margin-right: 5px;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        .add-button {
+            background-color: #27ae60;
+            padding: 8px 20px;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        .add-button:hover {
+            background-color: #229954;
+        }
+        
+        .remove-button {
+            background-color: #e74c3c;
+            padding: 5px 15px;
+            font-size: 12px;
+        }
+        
+        .remove-button:hover {
+            background-color: #c0392b;
+        }
+        
+        .repeating-section {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border-left: 3px solid #3498db;
+        }
+        
+        .button-group {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .required {
+            color: #e74c3c;
+        }
+        
+        .info-text {
+            font-size: 12px;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bankruptcy Case Intake Form</h1>
+        
+        <form id="bankruptcyForm" 
+              action="https://script.google.com/macros/s/AKfycbx3Qu6Hv4EaCbFW4AXk2gW9hZcKfz_QaJsCDXQPRxZatr_UYKg_h3ZbGrpHHM2U8IiKdw/exec"
+              method="POST">
+            
+            <!-- CASE INFORMATION -->
+            <h2>Case Information</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="Chapter">Chapter <span class="required">*</span></label>
+                    <select id="Chapter" name="Chapter" required>
+                        <option value="">Select Chapter</option>
+                        <option value="7">Chapter 7</option>
+                        <option value="11">Chapter 11</option>
+                        <option value="13">Chapter 13</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="NatureOfDebt">Nature of Debt <span class="required">*</span></label>
+                    <select id="NatureOfDebt" name="NatureOfDebt" required>
+                        <option value="">Select Type</option>
+                        <option value="business">Business</option>
+                        <option value="consumer">Consumer</option>
+                        <option value="both">Both</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="TypeOfDebtor">Type of Debtor <span class="required">*</span></label>
+                    <select id="TypeOfDebtor" name="TypeOfDebtor" required>
+                        <option value="">Select Type</option>
+                        <option value="individual">Individual</option>
+                        <option value="joint">Joint (Married)</option>
+                        <option value="corporation">Corporation</option>
+                        <option value="partnership">Partnership</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="CaseNotes">Case Notes</label>
+                <textarea id="CaseNotes" name="CaseNotes" placeholder="Additional case information..."></textarea>
+            </div>
+            
+            <!-- DEBTOR INFORMATION -->
+            <h2>Debtor Information</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="FirstName">First Name <span class="required">*</span></label>
+                    <input type="text" id="FirstName" name="FirstName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="MiddleName">Middle Name</label>
+                    <input type="text" id="MiddleName" name="MiddleName">
+                </div>
+                
+                <div class="form-group">
+                    <label for="LastName">Last Name <span class="required">*</span></label>
+                    <input type="text" id="LastName" name="LastName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Generation">Suffix (Jr., Sr., III, etc.)</label>
+                    <input type="text" id="Generation" name="Generation">
+                </div>
+            </div>
+            
+            <h3>Current Address</h3>
+            <div class="form-group">
+                <label for="Addr">Street Address <span class="required">*</span></label>
+                <input type="text" id="Addr" name="Addr" required>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="City">City <span class="required">*</span></label>
+                    <input type="text" id="City" name="City" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="State">State <span class="required">*</span></label>
+                    <input type="text" id="State" name="State" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Zip">ZIP Code <span class="required">*</span></label>
+                    <input type="text" id="Zip" name="Zip" pattern="[0-9]{5}(-[0-9]{4})?" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="County">County</label>
+                    <input type="text" id="County" name="County">
+                </div>
+            </div>
+            
+            <h3>Mailing Address (if different)</h3>
+            <div class="form-group">
+                <label for="MailAddr">Mailing Address</label>
+                <input type="text" id="MailAddr" name="MailAddr">
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="MailCity">City</label>
+                    <input type="text" id="MailCity" name="MailCity">
+                </div>
+                
+                <div class="form-group">
+                    <label for="MailSt">State</label>
+                    <input type="text" id="MailSt" name="MailSt">
+                </div>
+                
+                <div class="form-group">
+                    <label for="MailZip">ZIP Code</label>
+                    <input type="text" id="MailZip" name="MailZip" pattern="[0-9]{5}(-[0-9]{4})?">
+                </div>
+            </div>
+            
+            <h3>Contact Information</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="HomePhone">Home Phone</label>
+                    <input type="tel" id="HomePhone" name="HomePhone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="WorkPhone">Work Phone</label>
+                    <input type="tel" id="WorkPhone" name="WorkPhone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="CellPhone">Cell Phone <span class="required">*</span></label>
+                    <input type="tel" id="CellPhone" name="CellPhone" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="EMail">Email Address <span class="required">*</span></label>
+                    <input type="email" id="EMail" name="EMail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="SocSecNo">Social Security Number</label>
+                    <input type="text" id="SocSecNo" name="SocSecNo" pattern="[0-9]{3}-?[0-9]{2}-?[0-9]{4}">
+                    <div class="info-text">Format: XXX-XX-XXXX</div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="ContactNotes">Preferred Contact Method</label>
+                <select id="ContactNotes" name="ContactNotes">
+                    <option value="">Select Preference</option>
+                    <option value="email">Email</option>
+                    <option value="phone">Phone</option>
+                    <option value="text">Text Message</option>
+                </select>
+            </div>
+            
+            <!-- JOINT DEBTOR INFORMATION -->
+            <h2>Joint Debtor Information (if applicable)</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="jointFirstName">First Name</label>
+                    <input type="text" id="jointFirstName" name="jFirstName">
+                </div>
+                
+                <div class="form-group">
+                    <label for="jointMiddleName">Middle Name</label>
+                    <input type="text" id="jointMiddleName" name="jMiddleName">
+                </div>
+                
+                <div class="form-group">
+                    <label for="jointLastName">Last Name</label>
+                    <input type="text" id="jointLastName" name="jLastName">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="jointEmail">Email</label>
+                    <input type="email" id="jointEmail" name="jEMail">
+                </div>
+                
+                <div class="form-group">
+                    <label for="jointCellPhone">Cell Phone</label>
+                    <input type="tel" id="jointCellPhone" name="jCellPhone">
+                </div>
+            </div>
+            
+            <!-- OTHER NAMES -->
+            <h2>Other Names Used</h2>
+            <div id="otherNamesContainer"></div>
+            <button type="button" class="add-button" onclick="addOtherName()">+ Add Other Name</button>
+            
+            <!-- DEPENDENTS -->
+            <h2>Dependents</h2>
+            <div id="dependentsContainer"></div>
+            <button type="button" class="add-button" onclick="addDependent()">+ Add Dependent</button>
+            
+            <!-- PRIOR CASES -->
+            <h2>Prior Bankruptcy Cases</h2>
+            <div id="priorCasesContainer"></div>
+            <button type="button" class="add-button" onclick="addPriorCase()">+ Add Prior Case</button>
+            
+            <!-- SCHEDULE A/B - ASSETS -->
+            <h2>Schedule A/B: Property (Assets)</h2>
+            <p class="info-text">List all property owned as of the filing date. Include even exempt property.</p>
+            
+            <h3>Real Property</h3>
+            <div id="realPropertyContainer"></div>
+            <button type="button" class="add-button" onclick="addRealProperty()">+ Add Real Property</button>
+            
+            <h3>Vehicles</h3>
+            <div id="vehiclesContainer"></div>
+            <button type="button" class="add-button" onclick="addVehicle()">+ Add Vehicle</button>
+            
+            <h3>Personal Property</h3>
+            <div id="personalPropertyContainer"></div>
+            <button type="button" class="add-button" onclick="addPersonalProperty()">+ Add Personal Property</button>
+            
+            <h3>Financial Accounts</h3>
+            <div id="financialAccountsContainer"></div>
+            <button type="button" class="add-button" onclick="addFinancialAccount()">+ Add Account</button>
+            
+            <h3>Retirement Accounts</h3>
+            <div id="retirementAccountsContainer"></div>
+            <button type="button" class="add-button" onclick="addRetirementAccount()">+ Add Retirement Account</button>
+            
+            <h3>Other Assets</h3>
+            <div id="otherAssetsContainer"></div>
+            <button type="button" class="add-button" onclick="addOtherAsset()">+ Add Other Asset</button>
+            
+            <!-- SCHEDULE D/E/F - DEBTS -->
+            <h2>Schedule D: Secured Claims</h2>
+            <p class="info-text">List all creditors who have a lien on your property (mortgages, car loans, etc.)</p>
+            <div id="securedDebtsContainer"></div>
+            <button type="button" class="add-button" onclick="addSecuredDebt()">+ Add Secured Debt</button>
+            
+            <h2>Schedule E/F: Unsecured Claims</h2>
+            
+            <h3>Priority Unsecured Claims (Schedule E)</h3>
+            <p class="info-text">These include certain taxes, domestic support obligations, and other priority debts</p>
+            <div id="priorityDebtsContainer"></div>
+            <button type="button" class="add-button" onclick="addPriorityDebt()">+ Add Priority Debt</button>
+            
+            <h3>Nonpriority Unsecured Claims (Schedule F)</h3>
+            <p class="info-text">Credit cards, medical bills, personal loans, etc.</p>
+            <div id="unsecuredDebtsContainer"></div>
+            <button type="button" class="add-button" onclick="addUnsecuredDebt()">+ Add Unsecured Debt</button>
+            
+            <!-- SCHEDULE G - EXECUTORY CONTRACTS -->
+            <h2>Schedule G: Executory Contracts and Unexpired Leases</h2>
+            <p class="info-text">List any leases (apartment, car) or contracts that are still in effect</p>
+            <div id="contractsContainer"></div>
+            <button type="button" class="add-button" onclick="addContract()">+ Add Contract/Lease</button>
+            
+            <!-- SCHEDULE H - CODEBTORS -->
+            <h2>Schedule H: Codebtors</h2>
+            <p class="info-text">List anyone who is also liable on your debts (cosigners, guarantors)</p>
+            <div id="codebtorsContainer"></div>
+            <button type="button" class="add-button" onclick="addCodebtor()">+ Add Codebtor</button>
+            
+            <!-- STATEMENT OF FINANCIAL AFFAIRS -->
+            <h2>Statement of Financial Affairs</h2>
+            
+            <h3>Prior Addresses (Last 3 Years)</h3>
+            <div id="priorAddressesContainer"></div>
+            <button type="button" class="add-button" onclick="addPriorAddress()">+ Add Prior Address</button>
+            
+            <h3>Tax Refunds</h3>
+            <div id="taxRefundsContainer"></div>
+            <button type="button" class="add-button" onclick="addTaxRefund()">+ Add Tax Refund</button>
+            
+            <h3>Gifts/Transfers (Last 2 Years)</h3>
+            <p class="info-text">List any gifts or property transfers over $600 in the last 2 years</p>
+            <div id="giftsContainer"></div>
+            <button type="button" class="add-button" onclick="addGift()">+ Add Gift/Transfer</button>
+            
+            <!-- INCOME INFORMATION -->
+            <h2>Income Information</h2>
+            
+            <h3>Debtor Employment</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="occupation">Occupation/Job Title</label>
+                    <input type="text" id="occupation" name="dOccupation">
+                </div>
+                
+                <div class="form-group">
+                    <label for="employer">Employer Name</label>
+                    <input type="text" id="employer" name="dEmployer">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="empAddr">Employer Address</label>
+                <input type="text" id="empAddr" name="dEmpAddr">
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="empCity">City</label>
+                    <input type="text" id="empCity" name="dEmpCity">
+                </div>
+                
+                <div class="form-group">
+                    <label for="empState">State</label>
+                    <input type="text" id="empState" name="dEmpState">
+                </div>
+                
+                <div class="form-group">
+                    <label for="empZip">ZIP Code</label>
+                    <input type="text" id="empZip" name="dEmpZip">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="howLong">Length of Employment</label>
+                    <input type="text" id="howLong" name="dHowLong" placeholder="e.g., 5 years, 2 months">
+                </div>
+                
+                <div class="form-group">
+                    <label for="payPeriod">Pay Period</label>
+                    <select id="payPeriod" name="dPayPeriod">
+                        <option value="">Select</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="biweekly">Bi-weekly</option>
+                        <option value="semimonthly">Semi-monthly</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+                </div>
+            </div>
+            
+            <h3>Income Per Pay Period</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="wages">Gross Wages</label>
+                    <input type="number" id="wages" name="dWages" step="0.01" placeholder="0.00">
+                </div>
+                
+                <div class="form-group">
+                    <label for="overtime">Overtime</label>
+                    <input type="number" id="overtime" name="dOvertime" step="0.01" placeholder="0.00">
+                </div>
+            </div>
+            
+            <h3>Deductions Per Pay Period</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="tax">Taxes</label>
+                    <input type="number" id="tax" name="dTax" step="0.01" placeholder="0.00">
+                </div>
+                
+                <div class="form-group">
+                    <label for="insurance">Insurance</label>
+                    <input type="number" id="insurance" name="dInsurance" step="0.01" placeholder="0.00">
+                </div>
+                
+                <div class="form-group">
+                    <label for="retireMandatory">Mandatory Retirement</label>
+                    <input type="number" id="retireMandatory" name="dRetireMandatory" step="0.01" placeholder="0.00">
+                </div>
+                
+                <div class="form-group">
+                    <label for="retireLoan">Retirement Loan</label>
+                    <input type="number" id="retireLoan" name="dRetireLoan" step="0.01" placeholder="0.00">
+                </div>
+            </div>
+            
+            <h3>Other Deductions</h3>
+            <div id="otherDeductionsContainer"></div>
+            <button type="button" class="add-button" onclick="addDeduction()">+ Add Deduction</button>
+            
+            <h3>Monthly Income (Last 6 Months)</h3>
+            <p class="info-text">Enter your net monthly income for each of the last 6 months</p>
+            <div id="monthlyIncomeContainer"></div>
+            <button type="button" class="add-button" onclick="addMonthlyIncome()">+ Add Month</button>
+            
+            <div class="form-group">
+                <label for="incomeChangeExpected">Expected Income Changes?</label>
+                <textarea id="incomeChangeExpected" name="ExpChange" placeholder="Describe any expected changes to income..."></textarea>
+            </div>
+            
+            <h3>Joint Debtor Employment (if applicable)</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="spouseOccupation">Occupation</label>
+                    <input type="text" id="spouseOccupation" name="sOccupation">
+                </div>
+                
+                <div class="form-group">
+                    <label for="spouseEmployer">Employer</label>
+                    <input type="text" id="spouseEmployer" name="sEmployer">
+                </div>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="spouseNotEmployed" name="sNotEmployed">
+                <label for="spouseNotEmployed">Joint Debtor is not employed</label>
+            </div>
+            
+            <!-- EXPENSE INFORMATION -->
+            <h2>Monthly Expenses</h2>
+            
+            <h3>Housing</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="rent">Rent or Mortgage</label>
+                    <input type="number" id="rent" name="Rent" step="0.01" placeholder="0.00">
+                </div>
+                
+                <div class="form-group">
+                    <label for="homeMaintenance">Home Maintenance</label>
+                    <input type="number" id="homeMaintenance" name="HomeMaintenance" step="0.01" placeholder="0.00">
+                </div>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="taxesIncluded" name="TaxesIncluded">
+                <label for="taxesIncluded">Taxes included in mortgage/rent</label>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="insuranceIncluded" name="InsuranceInc">
+                <label for="insuranceIncluded">Insurance included in mortgage/rent</label>
+            </div>
+            
+            <h3>Utilities</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="electricity">Electricity/Gas</label>
+                    <input type="number" id="electricity" name="Electricity" step="0.01" placeholder="0.00">
+                </div>
+                
+                <div class="form-group">
+                    <label for="water">Water/Sewer/Trash</label>
+                    <input type="number" id="water" name="Water" step="0.01" placeholder="0.00">
+                </div>
+                
+                <div class="form-group">
+                    <label for="telephone">Phone/Internet/Cable</label>
+                    <input type="number" id="telephone" name="Telephone" step="0.01" placeholder="0.00">
+                </div>
+            </div>
+            
+            <h3>Living Expenses</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="food">Food and Household Supplies</label>
+                    <input type="number" id="food" name="Food" step="0.01" placeholder="0.00">
+                </div>
+                
+                <div class="form-group">
+                    <label for="clothing">Clothing</label>
+                    <input type="number" id="clothing" name="Clothing" step="0.01" placeholder="0.00">
+                </div>
+                
+                <div class="form-group">
+                    <label for="personalCare">Personal Care</label>
+                    <input type="number" id="personalCare" name="PersonalCare" step="0.01" placeholder="0.00">
+                </div>
+                
+                <div class="form-group">
+                    <label for="medical">Medical and Dental</label>
+                    <input type="number" id="medical" name="Medical" step="0.01" placeholder="0.00">
+                </div>
+            </div>
+            
+            <h3>Transportation</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="transportation">Transportation (gas, parking, tolls)</label>
+                    <input type="number" id="transportation" name="Transportation" step="0.01" placeholder="0.00">
+                </div>
+                
+                <div class="form-group">
+                    <label for="installmentAuto">Vehicle Payment</label>
+                    <input type="number" id="installmentAuto" name="InstallmentAuto" step="0.01" placeholder="0.00">
+                </div>
+                
+                <div class="form-group">
+                    <label for="installmentAuto2">Vehicle Payment #2</label>
+                    <input type="number" id="installmentAuto2" name="InstallmentAuto2" step="0.01" placeholder="0.00">
+                </div>
+            </div>
+            
+            <h3>Insurance</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="insuranceHome">Homeowner's/Renter's Insurance</label>
+                    <input type="number" id="insuranceHome" name="InsuranceHome" step="0.01" placeholder="0.00">
+                </div>
+                
+                <div class="form-group">
+                    <label for="insuranceAuto">Auto Insurance</label>
+                    <input type="number" id="insuranceAuto" name="InsuranceAuto" step="0.01" placeholder="0.00">
+                </div>
+            </div>
+            
+            <h3>Other Monthly Expenses</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="recreation">Recreation/Entertainment</label>
+                    <input type="number" id="recreation" name="Recreation" step="0.01" placeholder="0.00">
+                </div>
+            </div>
+            
+            <h3>Installment Payments</h3>
+            <p class="info-text">List monthly payments on debts (credit cards, loans, etc.)</p>
+            <div id="installmentPaymentsContainer"></div>
+            <button type="button" class="add-button" onclick="addInstallmentPayment()">+ Add Payment</button>
+            
+            <h3>Other Monthly Expenses</h3>
+            <div id="otherExpensesContainer"></div>
+            <button type="button" class="add-button" onclick="addOtherExpense()">+ Add Other Expense</button>
+            
+            <!-- ADDITIONAL INFORMATION -->
+            <h2>Additional Information</h2>
+            <div class="form-group">
+                <label for="additionalInfo">Any additional information you'd like to provide</label>
+                <textarea id="additionalInfo" name="additionalInfo" rows="6" placeholder="Please provide any other relevant information..."></textarea>
+            </div>
+            
+            <!-- SUBMIT BUTTONS -->
+            <div class="button-group">
+                <button type="submit">Submit Form</button>
+                <button type="button" onclick="saveProgress()">Save Progress</button>
+                <button type="button" onclick="resetForm()">Clear Form</button>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Hidden iframe for form submission -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
+            onload="handleFormResponse()"></iframe>
+    
+    <script>
+        let formSubmitted = false;
+        
+        // Handle form response after iframe loads
+        function handleFormResponse() {
+            if (!formSubmitted) return;
+            
+            // Clear saved progress
+            localStorage.removeItem('bankruptcyFormData');
+            
+            alert('Form submitted successfully! Thank you.');
+            
+            // Optionally reset form (resetForm has its own confirmation)
+            resetForm();
+            
+            formSubmitted = false;
+        }
+        
+        // Counter for dynamic elements
+        let otherNameCounter = 0;
+        let dependentCounter = 0;
+        let priorCaseCounter = 0;
+        let realPropertyCounter = 0;
+        let vehicleCounter = 0;
+        let personalPropertyCounter = 0;
+        let financialAccountCounter = 0;
+        let retirementAccountCounter = 0;
+        let otherAssetCounter = 0;
+        let securedDebtCounter = 0;
+        let priorityDebtCounter = 0;
+        let unsecuredDebtCounter = 0;
+        let contractCounter = 0;
+        let codebtorCounter = 0;
+        let priorAddressCounter = 0;
+        let taxRefundCounter = 0;
+        let giftCounter = 0;
+        let deductionCounter = 0;
+        let monthlyIncomeCounter = 0;
+        let installmentPaymentCounter = 0;
+        let otherExpenseCounter = 0;
+        
+        // Add Other Name
+        function addOtherName() {
+            const container = document.getElementById('otherNamesContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `otherName_${otherNameCounter}`;
+            div.innerHTML = `
+                <h4>Other Name #${otherNameCounter + 1}</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Relationship</label>
+                        <select name="OtherName_Relationship_${otherNameCounter}">
+                            <option value="fka">Formerly Known As (FKA)</option>
+                            <option value="aka">Also Known As (AKA)</option>
+                            <option value="maiden">Maiden Name</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" name="OtherName_FirstName_${otherNameCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" name="OtherName_LastName_${otherNameCounter}">
+                    </div>
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('otherName_${otherNameCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            otherNameCounter++;
+        }
+        
+        // Add Dependent
+        function addDependent() {
+            const container = document.getElementById('dependentsContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `dependent_${dependentCounter}`;
+            div.innerHTML = `
+                <h4>Dependent #${dependentCounter + 1}</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="Dependant_Name_${dependentCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input type="number" name="Dependant_Age_${dependentCounter}" min="0" max="99">
+                    </div>
+                    <div class="form-group">
+                        <label>Relationship</label>
+                        <select name="Dependant_Relationship_${dependentCounter}">
+                            <option value="son">Son</option>
+                            <option value="daughter">Daughter</option>
+                            <option value="stepson">Stepson</option>
+                            <option value="stepdaughter">Stepdaughter</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="Dependant_LivesWith_${dependentCounter}">
+                    <label>Lives with you</label>
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('dependent_${dependentCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            dependentCounter++;
+        }
+        
+        // Add Prior Case
+        function addPriorCase() {
+            const container = document.getElementById('priorCasesContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `priorCase_${priorCaseCounter}`;
+            div.innerHTML = `
+                <h4>Prior Case #${priorCaseCounter + 1}</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Case Number</label>
+                        <input type="text" name="PriorCase_Number_${priorCaseCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>Filing Date</label>
+                        <input type="date" name="PriorCase_Date_${priorCaseCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>Court/District</label>
+                        <input type="text" name="PriorCase_Court_${priorCaseCounter}">
+                    </div>
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('priorCase_${priorCaseCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            priorCaseCounter++;
+        }
+        
+        // Add Real Property
+        function addRealProperty() {
+            const container = document.getElementById('realPropertyContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `realProperty_${realPropertyCounter}`;
+            div.innerHTML = `
+                <h4>Real Property #${realPropertyCounter + 1}</h4>
+                <div class="form-group">
+                    <label>Property Address</label>
+                    <input type="text" name="RealProperty_Address1_${realPropertyCounter}">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" name="RealProperty_City_${realPropertyCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>State</label>
+                        <input type="text" name="RealProperty_State_${realPropertyCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>ZIP</label>
+                        <input type="text" name="RealProperty_Zip_${realPropertyCounter}">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Current Market Value</label>
+                        <input type="number" name="RealProperty_MarketValue_${realPropertyCounter}" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label>Amount Owed</label>
+                        <input type="number" name="RealProperty_SecuredAmt_${realPropertyCounter}" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label>Property Type</label>
+                        <select name="RealProperty_Type_${realPropertyCounter}">
+                            <option value="singleFamily">Single Family Home</option>
+                            <option value="condo">Condo</option>
+                            <option value="mobile">Mobile Home</option>
+                            <option value="land">Land</option>
+                            <option value="investment">Investment Property</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('realProperty_${realPropertyCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            realPropertyCounter++;
+        }
+        
+        // Add Vehicle
+        function addVehicle() {
+            const container = document.getElementById('vehiclesContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `vehicle_${vehicleCounter}`;
+            div.innerHTML = `
+                <h4>Vehicle #${vehicleCounter + 1}</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Year</label>
+                        <input type="number" name="Vehicle_Year_${vehicleCounter}" min="1900" max="2030">
+                    </div>
+                    <div class="form-group">
+                        <label>Make</label>
+                        <input type="text" name="Vehicle_Make_${vehicleCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>Model</label>
+                        <input type="text" name="Vehicle_Model_${vehicleCounter}">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Current Value</label>
+                        <input type="number" name="Vehicle_MarketValue_${vehicleCounter}" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label>Amount Owed</label>
+                        <input type="number" name="Vehicle_SecuredAmt_${vehicleCounter}" step="0.01">
+                    </div>
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('vehicle_${vehicleCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            vehicleCounter++;
+        }
+        
+        // Add Personal Property
+        function addPersonalProperty() {
+            const container = document.getElementById('personalPropertyContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `personalProperty_${personalPropertyCounter}`;
+            div.innerHTML = `
+                <h4>Personal Property #${personalPropertyCounter + 1}</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select name="PersonalProperty_Type_${personalPropertyCounter}">
+                            <option value="furniture">Household Furniture & Goods</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="jewelry">Jewelry</option>
+                            <option value="collectibles">Collectibles</option>
+                            <option value="sports">Sports & Hobby Equipment</option>
+                            <option value="firearms">Firearms</option>
+                            <option value="animals">Animals</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Value</label>
+                        <input type="number" name="PersonalProperty_MarketValue_${personalPropertyCounter}" step="0.01">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" name="PersonalProperty_Description_${personalPropertyCounter}" placeholder="Describe the items...">
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('personalProperty_${personalPropertyCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            personalPropertyCounter++;
+        }
+        
+        // Add Financial Account
+        function addFinancialAccount() {
+            const container = document.getElementById('financialAccountsContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `financialAccount_${financialAccountCounter}`;
+            div.innerHTML = `
+                <h4>Financial Account #${financialAccountCounter + 1}</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select name="FinancialAccount_Type_${financialAccountCounter}">
+                            <option value="checking">Checking</option>
+                            <option value="savings">Savings</option>
+                            <option value="cash">Cash on Hand</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Institution</label>
+                        <input type="text" name="FinancialAccount_Institution_${financialAccountCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>Balance</label>
+                        <input type="number" name="FinancialAccount_MarketValue_${financialAccountCounter}" step="0.01">
+                    </div>
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('financialAccount_${financialAccountCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            financialAccountCounter++;
+        }
+        
+        // Add Retirement Account
+        function addRetirementAccount() {
+            const container = document.getElementById('retirementAccountsContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `retirementAccount_${retirementAccountCounter}`;
+            div.innerHTML = `
+                <h4>Retirement Account #${retirementAccountCounter + 1}</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select name="RetirementAccount_Type_${retirementAccountCounter}">
+                            <option value="401k">401(k)</option>
+                            <option value="403b">403(b)</option>
+                            <option value="ira">IRA</option>
+                            <option value="pension">Pension</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Institution</label>
+                        <input type="text" name="RetirementAccount_Institution_${retirementAccountCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>Current Value</label>
+                        <input type="number" name="RetirementAccount_MarketValue_${retirementAccountCounter}" step="0.01">
+                    </div>
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('retirementAccount_${retirementAccountCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            retirementAccountCounter++;
+        }
+        
+        // Add Other Asset
+        function addOtherAsset() {
+            const container = document.getElementById('otherAssetsContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `otherAsset_${otherAssetCounter}`;
+            div.innerHTML = `
+                <h4>Other Asset #${otherAssetCounter + 1}</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select name="OtherAsset_Type_${otherAssetCounter}">
+                            <option value="taxRefund">Tax Refund</option>
+                            <option value="insurance">Life Insurance</option>
+                            <option value="intellectual">Intellectual Property</option>
+                            <option value="deposit">Security Deposit</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Value</label>
+                        <input type="number" name="OtherAsset_MarketValue_${otherAssetCounter}" step="0.01">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" name="OtherAsset_Description_${otherAssetCounter}">
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('otherAsset_${otherAssetCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            otherAssetCounter++;
+        }
+        
+        // Add Secured Debt
+        function addSecuredDebt() {
+            const container = document.getElementById('securedDebtsContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `securedDebt_${securedDebtCounter}`;
+            div.innerHTML = `
+                <h4>Secured Debt #${securedDebtCounter + 1}</h4>
+                <div class="form-group">
+                    <label>Creditor Name</label>
+                    <input type="text" name="SecuredDebt_Name_${securedDebtCounter}">
+                </div>
+                <div class="form-group">
+                    <label>Creditor Address</label>
+                    <input type="text" name="SecuredDebt_Address1_${securedDebtCounter}">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" name="SecuredDebt_City_${securedDebtCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>State</label>
+                        <input type="text" name="SecuredDebt_State_${securedDebtCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>ZIP</label>
+                        <input type="text" name="SecuredDebt_Zip_${securedDebtCounter}">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Amount Owed</label>
+                        <input type="number" name="SecuredDebt_ClaimAmt_${securedDebtCounter}" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label>Lien Type</label>
+                        <select name="SecuredDebt_LienNature_${securedDebtCounter}">
+                            <option value="mortgage">Mortgage</option>
+                            <option value="vehicleLoan">Vehicle Loan</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Property Description</label>
+                    <input type="text" name="SecuredDebt_PropertyName_${securedDebtCounter}" placeholder="What property secures this debt?">
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('securedDebt_${securedDebtCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            securedDebtCounter++;
+        }
+        
+        // Add Priority Debt
+        function addPriorityDebt() {
+            const container = document.getElementById('priorityDebtsContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `priorityDebt_${priorityDebtCounter}`;
+            div.innerHTML = `
+                <h4>Priority Debt #${priorityDebtCounter + 1}</h4>
+                <div class="form-group">
+                    <label>Creditor Name</label>
+                    <input type="text" name="PriorityDebt_Name_${priorityDebtCounter}">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select name="PriorityDebt_CreditorType_${priorityDebtCounter}">
+                            <option value="tax">Taxes</option>
+                            <option value="support">Domestic Support</option>
+                            <option value="wages">Wages Owed to Employees</option>
+                            <option value="other">Other Priority</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="number" name="PriorityDebt_PriorityAmt_${priorityDebtCounter}" step="0.01">
+                    </div>
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('priorityDebt_${priorityDebtCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            priorityDebtCounter++;
+        }
+        
+        // Add Unsecured Debt
+        function addUnsecuredDebt() {
+            const container = document.getElementById('unsecuredDebtsContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `unsecuredDebt_${unsecuredDebtCounter}`;
+            div.innerHTML = `
+                <h4>Unsecured Debt #${unsecuredDebtCounter + 1}</h4>
+                <div class="form-group">
+                    <label>Creditor Name</label>
+                    <input type="text" name="UnsecuredDebt_Name_${unsecuredDebtCounter}">
+                </div>
+                <div class="form-group">
+                    <label>Creditor Address</label>
+                    <input type="text" name="UnsecuredDebt_Address1_${unsecuredDebtCounter}">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" name="UnsecuredDebt_City_${unsecuredDebtCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>State</label>
+                        <input type="text" name="UnsecuredDebt_State_${unsecuredDebtCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>ZIP</label>
+                        <input type="text" name="UnsecuredDebt_Zip_${unsecuredDebtCounter}">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select name="UnsecuredDebt_CreditorType_${unsecuredDebtCounter}">
+                            <option value="creditCard">Credit Card</option>
+                            <option value="storeCard">Store Card</option>
+                            <option value="studentLoan">Student Loan</option>
+                            <option value="medical">Medical Bill</option>
+                            <option value="personal">Personal Loan</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Amount Owed</label>
+                        <input type="number" name="UnsecuredDebt_ClaimAmt_${unsecuredDebtCounter}" step="0.01">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Account Number (last 4 digits)</label>
+                    <input type="text" name="UnsecuredDebt_AccountNo_${unsecuredDebtCounter}" maxlength="4" placeholder="XXXX">
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('unsecuredDebt_${unsecuredDebtCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            unsecuredDebtCounter++;
+        }
+        
+        // Add Contract
+        function addContract() {
+            const container = document.getElementById('contractsContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `contract_${contractCounter}`;
+            div.innerHTML = `
+                <h4>Contract/Lease #${contractCounter + 1}</h4>
+                <div class="form-group">
+                    <label>Name (Landlord/Lessor)</label>
+                    <input type="text" name="Contract_Name_${contractCounter}">
+                </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" name="Contract_Address1_${contractCounter}">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" name="Contract_City_${contractCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>State</label>
+                        <input type="text" name="Contract_State_${contractCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>ZIP</label>
+                        <input type="text" name="Contract_Zip_${contractCounter}">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select name="Contract_Type_${contractCounter}">
+                            <option value="residential">Residential Lease</option>
+                            <option value="vehicle">Vehicle Lease</option>
+                            <option value="other">Other Contract</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Intention</label>
+                        <select name="Contract_Intention_${contractCounter}">
+                            <option value="assume">Assume/Continue</option>
+                            <option value="reject">Reject/Terminate</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" name="Contract_Description_${contractCounter}">
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('contract_${contractCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            contractCounter++;
+        }
+        
+        // Add Codebtor
+        function addCodebtor() {
+            const container = document.getElementById('codebtorsContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `codebtor_${codebtorCounter}`;
+            div.innerHTML = `
+                <h4>Codebtor #${codebtorCounter + 1}</h4>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="Codebtor_Name_${codebtorCounter}">
+                </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" name="Codebtor_Address1_${codebtorCounter}">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" name="Codebtor_City_${codebtorCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>State</label>
+                        <input type="text" name="Codebtor_State_${codebtorCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>ZIP</label>
+                        <input type="text" name="Codebtor_Zip_${codebtorCounter}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Related Debt/Creditor</label>
+                    <input type="text" name="Codebtor_RelatedDebt_${codebtorCounter}" placeholder="Which debt is this person liable for?">
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('codebtor_${codebtorCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            codebtorCounter++;
+        }
+        
+        // Add Prior Address
+        function addPriorAddress() {
+            const container = document.getElementById('priorAddressesContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `priorAddress_${priorAddressCounter}`;
+            div.innerHTML = `
+                <h4>Prior Address #${priorAddressCounter + 1}</h4>
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" name="PriorAddress_Addr_${priorAddressCounter}">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" name="PriorAddress_City_${priorAddressCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>State</label>
+                        <input type="text" name="PriorAddress_State_${priorAddressCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>ZIP</label>
+                        <input type="text" name="PriorAddress_Zip_${priorAddressCounter}">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Dates Lived There</label>
+                        <input type="text" name="PriorAddress_Dates_${priorAddressCounter}" placeholder="e.g., 1/2022 - 9/2024">
+                    </div>
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('priorAddress_${priorAddressCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            priorAddressCounter++;
+        }
+        
+        // Add Tax Refund
+        function addTaxRefund() {
+            const container = document.getElementById('taxRefundsContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `taxRefund_${taxRefundCounter}`;
+            div.innerHTML = `
+                <h4>Tax Refund #${taxRefundCounter + 1}</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select name="TaxRefund_Type_${taxRefundCounter}">
+                            <option value="federal">Federal</option>
+                            <option value="state">State</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tax Year</label>
+                        <input type="number" name="TaxRefund_Year_${taxRefundCounter}" min="2015" max="2030">
+                    </div>
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="number" name="TaxRefund_Amount_${taxRefundCounter}" step="0.01">
+                    </div>
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('taxRefund_${taxRefundCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            taxRefundCounter++;
+        }
+        
+        // Add Gift
+        function addGift() {
+            const container = document.getElementById('giftsContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `gift_${giftCounter}`;
+            div.innerHTML = `
+                <h4>Gift/Transfer #${giftCounter + 1}</h4>
+                <div class="form-group">
+                    <label>Recipient Name</label>
+                    <input type="text" name="Gift_Recipient_${giftCounter}">
+                </div>
+                <div class="form-group">
+                    <label>Recipient Address</label>
+                    <input type="text" name="Gift_Address_${giftCounter}">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date of Transfer</label>
+                        <input type="date" name="Gift_Date_${giftCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>Value</label>
+                        <input type="number" name="Gift_Value_${giftCounter}" step="0.01">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Description of Property</label>
+                    <input type="text" name="Gift_Description_${giftCounter}">
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('gift_${giftCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            giftCounter++;
+        }
+        
+        // Add Deduction
+        function addDeduction() {
+            const container = document.getElementById('otherDeductionsContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `deduction_${deductionCounter}`;
+            div.innerHTML = `
+                <h4>Deduction #${deductionCounter + 1}</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" name="DeductionDesc${deductionCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>Amount Per Pay Period</label>
+                        <input type="number" name="DeductionAmtD${deductionCounter}" step="0.01">
+                    </div>
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('deduction_${deductionCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            deductionCounter++;
+        }
+        
+        // Add Monthly Income
+        function addMonthlyIncome() {
+            const container = document.getElementById('monthlyIncomeContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `monthlyIncome_${monthlyIncomeCounter}`;
+            div.innerHTML = `
+                <h4>Month #${monthlyIncomeCounter + 1}</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Month/Year</label>
+                        <input type="text" name="MonthlyIncome_Month_${monthlyIncomeCounter}" placeholder="e.g., 01/2025">
+                    </div>
+                    <div class="form-group">
+                        <label>Net Income</label>
+                        <input type="number" name="MonthlyIncome_Amount_${monthlyIncomeCounter}" step="0.01">
+                    </div>
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('monthlyIncome_${monthlyIncomeCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            monthlyIncomeCounter++;
+        }
+        
+        // Add Installment Payment
+        function addInstallmentPayment() {
+            const container = document.getElementById('installmentPaymentsContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `installmentPayment_${installmentPaymentCounter}`;
+            div.innerHTML = `
+                <h4>Payment #${installmentPaymentCounter + 1}</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Creditor/Description</label>
+                        <input type="text" name="InstallmentDsc${installmentPaymentCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>Monthly Amount</label>
+                        <input type="number" name="InstallmentAmt${installmentPaymentCounter}" step="0.01">
+                    </div>
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('installmentPayment_${installmentPaymentCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            installmentPaymentCounter++;
+        }
+        
+        // Add Other Expense
+        function addOtherExpense() {
+            const container = document.getElementById('otherExpensesContainer');
+            const div = document.createElement('div');
+            div.className = 'repeating-section';
+            div.id = `otherExpense_${otherExpenseCounter}`;
+            div.innerHTML = `
+                <h4>Other Expense #${otherExpenseCounter + 1}</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" name="OtherDsc${otherExpenseCounter}">
+                    </div>
+                    <div class="form-group">
+                        <label>Monthly Amount</label>
+                        <input type="number" name="OtherAmt${otherExpenseCounter}" step="0.01">
+                    </div>
+                </div>
+                <button type="button" class="remove-button" onclick="removeElement('otherExpense_${otherExpenseCounter}')">Remove</button>
+            `;
+            container.appendChild(div);
+            otherExpenseCounter++;
+        }
+        
+        // Remove Element
+        function removeElement(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.remove();
+            }
+        }
+        
+        // Form submission
+        document.getElementById('bankruptcyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            const submitButton = e.submitter;
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Submitting...';
+            submitButton.disabled = true;
+            formSubmitted = true;
+            
+            // Log the data being submitted
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            console.log('Submitting data:', data);
+            
+            // Submit form to hidden iframe
+            this.target = 'hidden_iframe';
+            this.submit();
+            
+            // Fallback timeout in case iframe doesn't load
+            setTimeout(() => {
+                if (formSubmitted) {
+                    handleFormResponse();
+                }
+            }, 8000);
+        });
+        
+        // Save Progress
+        function saveProgress() {
+            const formData = new FormData(document.getElementById('bankruptcyForm'));
+            const data = {};
+            
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            
+            localStorage.setItem('bankruptcyFormData', JSON.stringify(data));
+            alert('Progress saved!');
+        }
+        
+        // Load saved progress on page load
+        window.addEventListener('load', function() {
+            const savedData = localStorage.getItem('bankruptcyFormData');
+            if (savedData) {
+                const data = JSON.parse(savedData);
+                const form = document.getElementById('bankruptcyForm');
+                
+                for (let [key, value] of Object.entries(data)) {
+                    const input = form.elements[key];
+                    if (input) {
+                        if (input.type === 'checkbox') {
+                            input.checked = value === 'on';
+                        } else {
+                            input.value = value;
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Reset Form
+        function resetForm() {
+            if (confirm('Are you sure you want to clear all form data?')) {
+                document.getElementById('bankruptcyForm').reset();
+                localStorage.removeItem('bankruptcyFormData');
+                
+                // Clear all dynamic sections
+                document.getElementById('otherNamesContainer').innerHTML = '';
+                document.getElementById('dependentsContainer').innerHTML = '';
+                document.getElementById('priorCasesContainer').innerHTML = '';
+                document.getElementById('realPropertyContainer').innerHTML = '';
+                document.getElementById('vehiclesContainer').innerHTML = '';
+                document.getElementById('personalPropertyContainer').innerHTML = '';
+                document.getElementById('financialAccountsContainer').innerHTML = '';
+                document.getElementById('retirementAccountsContainer').innerHTML = '';
+                document.getElementById('otherAssetsContainer').innerHTML = '';
+                document.getElementById('securedDebtsContainer').innerHTML = '';
+                document.getElementById('priorityDebtsContainer').innerHTML = '';
+                document.getElementById('unsecuredDebtsContainer').innerHTML = '';
+                document.getElementById('contractsContainer').innerHTML = '';
+                document.getElementById('codebtorsContainer').innerHTML = '';
+                document.getElementById('priorAddressesContainer').innerHTML = '';
+                document.getElementById('taxRefundsContainer').innerHTML = '';
+                document.getElementById('giftsContainer').innerHTML = '';
+                document.getElementById('otherDeductionsContainer').innerHTML = '';
+                document.getElementById('monthlyIncomeContainer').innerHTML = '';
+                document.getElementById('installmentPaymentsContainer').innerHTML = '';
+                document.getElementById('otherExpensesContainer').innerHTML = '';
+                
+                // Reset counters
+                otherNameCounter = 0;
+                dependentCounter = 0;
+                priorCaseCounter = 0;
+                realPropertyCounter = 0;
+                vehicleCounter = 0;
+                personalPropertyCounter = 0;
+                financialAccountCounter = 0;
+                retirementAccountCounter = 0;
+                otherAssetCounter = 0;
+                securedDebtCounter = 0;
+                priorityDebtCounter = 0;
+                unsecuredDebtCounter = 0;
+                contractCounter = 0;
+                codebtorCounter = 0;
+                priorAddressCounter = 0;
+                taxRefundCounter = 0;
+                giftCounter = 0;
+                deductionCounter = 0;
+                monthlyIncomeCounter = 0;
+                installmentPaymentCounter = 0;
+                otherExpenseCounter = 0;
+            }
+        }
+    </script>
+</body>
+</html>
